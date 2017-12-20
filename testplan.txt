@@ -1,0 +1,60 @@
+TIMOTHY PARK tjp135
+JAMES O'BRIEN jo225
+
+** IF THERE WAS NO INPUT IN A FILE, WE RETURNED AN EMPTY FILE.
+
+TEST 1:
+	EMPTY FILE: plan    \\EMPTY FILE
+        OUTPUT: Empty File.	
+TEST 2:
+	DIRECTORY: test1/test5/test10
+	FILE "hello": @i   
+        OUTPUT:  {"list" : [
+     			   {"i" : [
+               			 {"test1/test5/test10/hello" : 1}
+      			  ]}
+		 ]} 
+TEST 3:
+	DIRECTORY: test1/test5/test10   \\EMPTY DIRECTORY IN A DIRECTORY
+        FILE: NONE
+	OUTPUT: EMPTY FILE
+TEST 4:
+	DIRECTORY: test1/plan2
+	FILE: "plan2"
+	OUTPUT: 
+		{"list" : [
+  		      {"hello" : [
+               			 {"test1/plan2" : 3}
+       			 ]},
+      			{"hi" : [
+           	    		 {"test1/plan2" : 1}
+       			 ]}
+		]}
+     		 
+
+TEST 5:
+	DIRECTORY: test1
+	FILE: "plan" "plan2" "plan3"...
+	OUTPUT:
+{"list" : [
+        {"hello" : [
+                {"test1/plan2" : 3},
+                {"test1/test2/plan3" : 3}
+        ]},
+        {"hi" : [
+                {"test1/plan2" : 1}
+        ]},
+        {"i" : [
+                {"test1/test5/test10/hello" : 1}
+        ]},
+        {"test123" : [
+                {"test1/test5/zz" : 2}
+        ]},
+        {"what" : [
+                {"test1/plan5" : 1},
+                {"test1/test3" : 1}
+        ]},
+        {"yo" : [
+                {"test1/test5/zz" : 5}
+        ]}
+]}
